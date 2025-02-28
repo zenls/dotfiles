@@ -1,0 +1,44 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+startup_mode = "Windowed"
+title = "Alacritty"
+dynamic_title = true
+decorations_theme_variant = "None"
+decorations = "Full"
+opacity = 0.5
+blur = true
+
+[font]
+size = 12
+normal = { family = "Hack Nerd Font" }
+builtin_box_drawing = true
+
+[colors.primary]
+background = '#000000'
+foreground = '#E4E4E4'
+
+[colors.cursor]
+text = '#122637'
+cursor = '#616161'
+
+[colors.normal]
+black   = '#000000'
+red     = '#ff0000'
+green   = '#37dd21'
+yellow  = '#fee409'
+blue    = '#1460d2'
+magenta = '#ff005d'
+cyan    = '#00bbbb'
+white   = '#bbbbbb'
+
+[colors.bright]
+black   = '#545454'
+red     = '#f40d17'
+green   = '#3bcf1d'
+yellow  = '#ecc809'
+blue    = '#5555ff'
+magenta = '#ff55ff'
+cyan    = '#6ae3f9'
+white   = '#ffffff'
