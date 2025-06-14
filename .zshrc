@@ -50,3 +50,9 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 # Add plagin zsh-syntax-highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Created by `pipx` on 2025-04-16 23:21:31
+export PATH="$PATH:/home/zen/.local/bin"
+
+# Add precompiled software
+export PATH="/home/zen/app/verible-v0.0-3967-gd0f83bfd/bin/:$PATH"

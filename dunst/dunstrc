@@ -1,5 +1,5 @@
 [global]
-    monitor = DP-3
+    monitor = DP-6
     follow = none
  
     ### Geometry ###
@@ -9,6 +9,7 @@
     offset = 13x10
     scale = 0
     notification_limit = 15
+    stack_top = true
  
     ### Progress bar ###
     progress_bar = true
@@ -26,7 +27,7 @@
     frame_width = 3
     frame_color = "#888888"
     separator_color = frame
-    sort = yes
+    sort = update
     idle_threshold = 120
  
     ### Text ###
@@ -45,9 +46,9 @@
  
     ### Icons ###
     icon_position = left
-    min_icon_size = 0
-    max_icon_size = 48
-    icon_path = /usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/:/usr/share/icons/Papirus/48x48/emblems/
+    min_icon_size = 60
+    max_icon_size = 60
+    icon_path = /usr/share/icons/Papirus/32x32/status/:/usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Papirus/32x32/emblems/
  
     ### History ###
     sticky_history = yes
