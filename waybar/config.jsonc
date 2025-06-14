@@ -17,6 +17,7 @@
         "tray",
         "pulseaudio",
         "bluetooth",
+        "custom/nextcloud_sinc",
         "custom/vpn_check",
         "custom/vpn_enable",
         "network",
@@ -206,6 +207,13 @@
     "custom/vpn_check": {
         "interval": 600,
         "exec": "$HOME/.config/dotfiles/scripts/vpn_check.sh",
+        "on-click": "$HOME/.config/dotfiles/scripts/vpn_check.sh",
         "format": " {}"
+    },
+    "custom/nextcloud_sinc": {
+        "interval": 3600,
+        "exec": "$HOME/.config/dotfiles/scripts/nextcloud_sinc.sh",
+        "on-click": "$HOME/.config/dotfiles/scripts/nextcloud_sinc.sh",
+        "format": "{}"
     }
 }

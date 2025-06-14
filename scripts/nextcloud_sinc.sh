@@ -1,9 +1,9 @@
 #! /bin/bash
- 
+
 # nextcloudcmd use ~/.netrc to get login and pass
-if $(nextcloudcmd --path obsidian ~/obsidian "https://cloud.zenembed.com" &> /dev/null)
+if $(nextcloudcmd -n -s --path nextcloud ~/nextcloud "https://cloud.zenembed.com")
 then
-    echo -en "    "
+    echo "󰅠"
 else
-    echo -en "     "
+    echo "󰧠"
 fi
