@@ -15,14 +15,13 @@
     ],
     "modules-right": [
         "tray",
+        "custom/nextcloud_sync",
+        "custom/vpn_enable",
+        "custom/vpn_check",
+        "network",
         "pulseaudio",
         "bluetooth",
-        "custom/nextcloud_sinc",
-        "custom/vpn_check",
-        "custom/vpn_enable",
-        "network",
         "backlight",
-        "power-profiles-daemon",
         "battery",
         "hyprland/language",
         "clock",
@@ -147,26 +146,14 @@
             "󱊣"
         ]
     },
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-        "tooltip": true,
-        "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
-        }
-    },
     "network": {
         "interval": 1,
-        "family": "ipv4_6",
-        "format-wifi": "󰖩  {ipaddr} |  {bandwidthUpBits}  {bandwidthDownBits}",
-        "format-ethernet": "󰈀 {ifname} {ipaddr}",
+        "format-wifi": "󰖩  {ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-ethernet": "󰈀 {ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
-        "tooltip-format": "{ifname} {ipaddr} : {gwaddr} : {netmask}",
-        "tooltip-format-wifi": "{ifname} : {essid} ({frequency}GHz) : {signaldBm}dBm{signalStrength}% \n{ipaddr} : {gwaddr} : {netmask}"
+        "tooltip-format": "{ifname} -> {ipaddr}:{gwaddr}:{netmask}",
+        "tooltip-format-wifi": "{ifname} -> {essid} ({frequency}GHz):{signaldBm}dBm{signalStrength}% \n{ipaddr}:{gwaddr}:{netmask}"
     },
     "pulseaudio": {
         "format": "{format_source} | {icon} {volume}%",
@@ -194,13 +181,11 @@
         "menu-file": "$HOME/.config/waybar/power_menu.xml",
         "menu-actions": {
             "shutdown": "shutdown now",
-            "reboot": "reboot now",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
+            "reboot": "reboot now"
         }
     },
     "custom/vpn_enable": {
-        "interval": 1,
+        "interval": 3,
         "exec": "ip l | grep wg | grep -q UP && echo  || echo ",
         "format": "{}"
     },
@@ -210,10 +195,10 @@
         "on-click": "$HOME/.config/dotfiles/scripts/vpn_check.sh",
         "format": " {}"
     },
-    "custom/nextcloud_sinc": {
-        "interval": 3600,
-        "exec": "$HOME/.config/dotfiles/scripts/nextcloud_sinc.sh",
-        "on-click": "$HOME/.config/dotfiles/scripts/nextcloud_sinc.sh",
+    "custom/nextcloud_sync": {
+        "interval": 3,
+        "exec": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh",
+        "on-click": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh -f",
         "format": "{}"
     }
 }
