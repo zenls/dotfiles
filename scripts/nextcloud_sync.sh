@@ -2,7 +2,8 @@
 
 STATE_FILE="/tmp/.nextcloud_sync.json"
 EXIT_FILE="/tmp/.nextcloud_sync.exit"
-CMD=(nextcloudcmd -n -s --path nextcloud ~/nextcloud "https://cloud.zenembed.com")
+LOCAL_FOLDER=~/nextcloud
+CMD=(rclone bisync $LOCAL_FOLDER cloud.zenembed.com: --webdav-nextcloud-chunk-size 0)
 DELAY_SEC=$((30 * 60))
 
 FORCE_SYNC=0
@@ -45,9 +46,13 @@ elif (( $(( $(date +%s) - ts )) <= DELAY_SEC )); then
   if [[ -f "$EXIT_FILE" ]]; then
     exit_code=$(<"$EXIT_FILE")
     if (( $exit_code == 0 )); then
-      echo "󰅠"
+      if find $LOCAL_FOLDER -type f -name '*.conflict*' -print -quit | grep -q .; then
+        echo "󰧠"
+      else
+        echo "󰅠"
+      fi
     else
-      echo "󰧠"
+      echo "󰨹"
     fi
   else
     echo "󰔪"
@@ -55,3 +60,4 @@ elif (( $(( $(date +%s) - ts )) <= DELAY_SEC )); then
 else
   start_sync
 fi
+

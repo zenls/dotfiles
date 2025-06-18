@@ -148,8 +148,8 @@
     },
     "network": {
         "interval": 1,
-        "format-wifi": "󰖩  {ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
-        "format-ethernet": "󰈀 {ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-wifi": "󰖩   {bandwidthUpBits}  {bandwidthDownBits}",
+        "format-ethernet": "󰈀  {bandwidthUpBits}  {bandwidthDownBits}",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
         "tooltip-format": "{ifname} -> {ipaddr}:{gwaddr}:{netmask}",
@@ -199,6 +199,7 @@
         "interval": 3,
         "exec": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh",
         "on-click": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh -f",
-        "format": "{}"
+        "format": "{}",
+        "tooltip-format":"Nextcloud sync, last status: {}."
     }
 }
