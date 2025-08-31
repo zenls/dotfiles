@@ -2,8 +2,8 @@
 
 STATE_FILE="/tmp/.nextcloud_sync.json"
 EXIT_FILE="/tmp/.nextcloud_sync.exit"
-LOCAL_FOLDER=~/nextcloud
-CMD=(rclone bisync $LOCAL_FOLDER cloud.zenembed.com: --webdav-nextcloud-chunk-size 0)
+LOCAL_FOLDER=~/nextcloud_sync
+CMD=(rclone bisync $LOCAL_FOLDER cloud.zenembed.com:/nextcloud_sync -v --log-file /tmp/rclone-bisync.log)
 DELAY_SEC=$((30 * 60))
 
 FORCE_SYNC=0
@@ -12,7 +12,7 @@ FORCE_SYNC=0
 start_sync() {
   rm -f "$EXIT_FILE"
   (
-    "${CMD[@]}" >/dev/null 2>&1
+    "${CMD[@]}" #>/dev/null 2>&1
     echo "$?" > "$EXIT_FILE"
   ) &
   local pid=$!
