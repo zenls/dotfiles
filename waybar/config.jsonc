@@ -157,22 +157,26 @@
     },
     "pulseaudio": {
         "format": "{format_source} | {icon} {volume}%",
-        "format-bluetooth": "{format_source} | {icon} {volume}%",
-        "format-bluetooth-muted": "{format_source} | ",
+        // "format-bluetooth": "{format_source} |  {icon} {volume}%",
         "format-muted": "{format_source} ",
+        // "format-bluetooth-muted": "{format_source} |  ",
         "format-source": "󰍬 {volume}%",
-        "format-source-muted": "󰍭 0%",
+        "format-source-muted": "󰍭",
         "format-icons": {
             "headphone": "󰋋",
             "hands-free": "",
             "headset": "",
-            "phone": "",
+            "phone": "",
             "portable": "",
             "car": "",
+            "speaker": "󰓃",
+            "hdmi": "󰡁",
+            "hifi": "󰤽",
             "default": [
-                "󰓃"
+                ""
             ]
-        }
+        },
+        "tooltip-format": "{icon} {desc} {volume}%, {format_source}"
     },
     "custom/power": {
         "format": "",
@@ -180,8 +184,8 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml",
         "menu-actions": {
-            "shutdown": "shutdown now",
-            "reboot": "reboot now"
+            "shutdown": "systemctl poweroff",
+            "reboot": "systemctl reboot"
         }
     },
     "custom/vpn_enable": {
@@ -200,6 +204,6 @@
         "exec": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh",
         "on-click": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh -f",
         "format": "{}",
-        "tooltip-format":"Nextcloud sync, last status: {}."
+        "tooltip-format": "Nextcloud sync, last status: {}."
     }
 }
