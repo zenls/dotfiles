@@ -1,115 +1,110 @@
+/* ----- Global ----- */
 * {
-  min-height: 0;
-  min-width: 0;
-  font-family: "Hack Nerd Font";
-  font-size: 13px;
-  font-weight: 600;
+    min-height: 0;
+    min-width: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
 }
 
 window#waybar {
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  /* background-color: #11111b; */
-  background-color: rgba(24, 24, 37, 0.6);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    background-color: rgba(24, 24, 37, 0.6);
+}
+
+.module {
+    margin: 0.2rem;
+    padding: 0rem 0.4rem;
+    border-radius: 0.3rem;
+    background-color: #1e1e2e;
+}
+
+/* ----- logo ----- */
+
+#custom-logo {
+    font-size: 20px;
+    padding-left: 0.6rem;
+    padding-right: 0.8rem;
+}
+
+/* ----- workspaces ----- */
+
+#workspaces.module {
+    padding-left: 0rem;
+    padding-right: 0rem;
 }
 
 #workspaces button {
-  padding: 0.3rem 0.6rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0;
+    color: #cdd6f4;
 }
 
-#workspaces button:hover {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+#workspaces button:first-child {
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    padding-left: 0.6rem;
+}
+#workspaces button:last-child {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    padding-right: 0.6rem;
 }
 
 #workspaces button.active {
-  background-color: #1e1e2e;
-  color: #89b4fa;
+    color: #89b4fa;
 }
-
 #workspaces button.urgent {
-  background-color: #1e1e2e;
-  color: #f38ba8;
+    color: #f38ba8;
+}
+#workspaces button:hover {
+    background: #cdd6f4;
+    color: #1e1e2e;
 }
 
-label.module {
-  padding: 0.3rem 1rem;
-  margin: 0.4rem 0.25rem;
-  border-radius: 6px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
-}
-
-#mpris.playing {
-  color: #a6e3a1;
-}
-
-#mpris.paused {
-  color: #9399b2;
-}
-
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
+/* Colors per module (keep your palette) */
 #cpu {
-  color: #94e2d5;
+    color: #94e2d5;
 }
 
 #memory {
-  color: #cba6f7;
+    color: #cba6f7;
 }
 
 #clock {
-  color: #74c7ec;
-}
-
-#clock.simpleclock {
-  color: #89b4fa;
-}
-
-#window {
-  color: #cdd6f4;
+    color: #74c7ec;
 }
 
 #pulseaudio {
-  color: #b4befe;
-}
-
-#language {
-  background: #6b0000;
-  min-width: 20px;
+    color: #b4befe;
 }
 
 #pulseaudio.muted {
-  color: #a6adc8;
+    color: #a6adc8;
 }
 
-#custom-logo {
-  color: #89b4fa;
-}
-
-#custom-power {
-  color: #f38ba8;
+#language {
+    background: #6b0000;
+    min-width: 20px;
 }
 
 #network {
-  min-width: 200px;
+    min-width: 200px;
 }
 
+#custom-nextcloud_sync {
+    margin-left: 5rem;
+}
+
+/* ----- tooltip ----- */
 tooltip {
-  background-color: #181825;
-  border: 2px solid #89b4fa;
+    background-color: rgba(24, 24, 37, 0.9);
+    border: 1px solid #1e1e2e;
+    border-radius: 0.6rem;
+}
+
+tooltip label {
+    color: #cdd6f4;
 }

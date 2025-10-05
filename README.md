@@ -12,12 +12,13 @@ sudo pacman -S mako
 For scripts to work you need to install dependencies:
 
 ```sh
-sudo pacman -S libnotify adwaita-icon-theme papirus-icon-theme ttf-hack-nerd nextcloud-client
+sudo pacman -S libnotify adwaita-icon-theme papirus-icon-theme ttf-hack-nerd ttf-jetbrains-mono-nerd nextcloud-client
 ```
 
 - `libnotify` - uses `notify-send` in script
 - `adwaita-icon-theme papirus-icon-theme` - icons for notifications
 - `ttf-hack-nerd` - font with icons
+- `ttf-jetbrains-mono-nerd` - font for waybar
 - `nextcloud-client` - software for Nextcloud sync
 
 ## Use
