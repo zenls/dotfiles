@@ -24,7 +24,7 @@ start_sync() {
     jq -n --arg pid "$pid" --arg ts "$ts" \
         '{pid: ($pid|tonumber), timestamp: ($ts|tonumber)}' >"$STATE_FILE"
 
-    notify-send -i nextcloud "Nextcloud" "Start Sync..."
+    # notify-send -i nextcloud "Nextcloud" "Start Sync..."
     echo "󰔪"
 }
 
@@ -53,7 +53,7 @@ elif (($(($(date +%s) - ts)) <= DELAY_SEC)); then
             notify-send -u critical -i nextcloud "Nextcloud" "Sync has conflicted file"
             echo "23" >"$EXIT_FILE"
         else
-            notify-send -u low -i nextcloud "Nextcloud" "Sync was finished."
+            # notify-send -u low -i nextcloud "Nextcloud" "Sync was finished."
             echo "55" >"$EXIT_FILE"
         fi
     fi

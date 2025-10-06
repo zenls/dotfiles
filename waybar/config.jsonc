@@ -5,15 +5,17 @@
         "output": ["DP-6"], // Your primary monitor
         "layer": "top",
         "position": "top",
-        "modules-left": [
-            "custom/logo",
-            "hyprland/workspaces",
+        "modules-left": ["custom/logo", "hyprland/workspaces"],
+        "modules-center": [
+            "disk",
+            "memory",
+            "cpu",
+            "temperature",
             "custom/nextcloud_sync",
             "custom/vpn_enable",
             "custom/vpn_check",
             "network"
         ],
-        "modules-center": ["disk", "memory", "cpu", "temperature"],
         "modules-right": [
             "pulseaudio",
             "bluetooth",
@@ -57,6 +59,7 @@
         "cpu": {
             "interval": 1,
             "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
+            // "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
             "format-icons": [
                 "<span color='#69ff94'>▁</span>",
                 "<span color='#2aa9ff'>▂</span>",
@@ -130,6 +133,7 @@
         },
         "network": {
             "interval": 1,
+            "align": 0,
             "format-wifi": "󰖩 {ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
             "format-ethernet": "󰈀  {bandwidthUpBits}  {bandwidthDownBits}",
             "format-linked": "󰈀 {ifname} (No IP)",

@@ -91,11 +91,11 @@ window#waybar {
 }
 
 #network {
-    min-width: 200px;
+    min-width: 320px;
 }
 
 #custom-nextcloud_sync {
-    margin-left: 5rem;
+    margin-left: 3rem;
 }
 
 /* ----- tooltip ----- */
