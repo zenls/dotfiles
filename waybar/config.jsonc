@@ -137,7 +137,7 @@
             "format-wifi": "󰖩 {ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
             "format-ethernet": "󰈀  {bandwidthUpBits}  {bandwidthDownBits}",
             "format-linked": "󰈀 {ifname} (No IP)",
-            "format-disconnected": "Disconnected ⚠",
+            "format-disconnected": "⚠ Disconnected ⚠",
             "tooltip-format": "{ifname} -> {ipaddr}:{gwaddr}:{netmask}",
             "tooltip-format-wifi": "{ifname} -> {essid} ({frequency}GHz):{signaldBm}dBm{signalStrength}% \n{ipaddr}:{gwaddr}:{netmask}"
         },
@@ -158,6 +158,8 @@
                 "hifi": "󰤽",
                 "default": [""]
             },
+            "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+            "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
             "tooltip-format": "{icon} {desc} {volume}%, {format_source}"
         },
         "custom/vpn_enable": {

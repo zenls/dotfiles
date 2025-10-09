@@ -15,7 +15,7 @@ window#waybar {
 
 .module {
     margin: 0.2rem;
-    padding: 0rem 0.4rem;
+    padding: 0rem 0.6rem;
     border-radius: 0.3rem;
     background-color: #1e1e2e;
 }
@@ -23,7 +23,7 @@ window#waybar {
 /* ----- logo ----- */
 
 #custom-logo {
-    font-size: 20px;
+    font-size: 1.3rem;
     padding-left: 0.6rem;
     padding-right: 0.8rem;
 }
@@ -33,11 +33,12 @@ window#waybar {
 #workspaces.module {
     padding-left: 0rem;
     padding-right: 0rem;
+    margin-left: 2rem;
 }
 
 #workspaces button {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
     border-radius: 0;
     color: #cdd6f4;
 }
@@ -45,12 +46,12 @@ window#waybar {
 #workspaces button:first-child {
     border-top-left-radius: 0.3rem;
     border-bottom-left-radius: 0.3rem;
-    padding-left: 0.6rem;
+    padding-left: 0.9rem;
 }
 #workspaces button:last-child {
     border-top-right-radius: 0.3rem;
     border-bottom-right-radius: 0.3rem;
-    padding-right: 0.6rem;
+    padding-right: 0.9rem;
 }
 
 #workspaces button.active {
@@ -86,12 +87,15 @@ window#waybar {
 }
 
 #language {
-    background: #6b0000;
-    min-width: 20px;
+    color: #ff5050;
+}
+
+#backlight {
+    color: #ffe38f;
 }
 
 #network {
-    min-width: 320px;
+    min-width: 22rem;
 }
 
 #custom-nextcloud_sync {
