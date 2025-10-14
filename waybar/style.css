@@ -1,4 +1,5 @@
 /* ----- Global ----- */
+
 * {
     min-height: 0;
     min-width: 0;
@@ -19,6 +20,11 @@ window#waybar {
     border-radius: 0.3rem;
     background-color: #1e1e2e;
 }
+
+.warning {
+    background: rgb(120, 0, 0);
+}
+
 
 /* ----- logo ----- */
 
@@ -65,18 +71,37 @@ window#waybar {
     color: #1e1e2e;
 }
 
-/* Colors per module (keep your palette) */
-#cpu {
-    color: #94e2d5;
-}
+/* ----- Middle blocks ----- */
 
 #memory {
     color: #cba6f7;
 }
 
-#clock {
-    color: #74c7ec;
+#cpu {
+    color: #94e2d5;
 }
+
+#custom-nextcloud_sync {
+    margin-left: 3rem;
+}
+
+#custom-site_check {
+    padding-right: 0.4rem;
+}
+
+#custom-vpn_check {
+    padding-right: 0.4rem;
+}
+
+#custom-vpn_check.warning {
+    padding-right: 0.5rem;
+}
+
+#network {
+    min-width: 22rem;
+}
+
+/* ----- Right blocks ----- */
 
 #pulseaudio {
     color: #b4befe;
@@ -86,23 +111,20 @@ window#waybar {
     color: #a6adc8;
 }
 
-#language {
-    color: #ff5050;
-}
-
 #backlight {
     color: #ffe38f;
 }
 
-#network {
-    min-width: 22rem;
+#language {
+    color: #ff5050;
 }
 
-#custom-nextcloud_sync {
-    margin-left: 3rem;
+#clock {
+    color: #74c7ec;
 }
 
 /* ----- tooltip ----- */
+
 tooltip {
     background-color: rgba(24, 24, 37, 0.9);
     border: 1px solid #1e1e2e;

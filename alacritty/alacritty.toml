@@ -1,5 +1,5 @@
 [env]
-TERM = "xterm-256color"
+TERM = "alacritty"
 
 [window]
 startup_mode = "Windowed"
@@ -7,17 +7,27 @@ title = "Alacritty"
 dynamic_title = true
 decorations_theme_variant = "None"
 decorations = "Full"
-opacity = 0.6
+opacity = 0.7
 blur = true
+
+[scrolling]
+history = 50000
+multiplier = 3
 
 [font]
 size = 12
 normal = { family = "Hack Nerd Font" }
 builtin_box_drawing = true
 
+[cursor]
+style = { shape = "Underline", blinking = "Off" }
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
 [colors.primary]
 background = '#000000'
-foreground = '#E4E4E4'
+foreground = '#D0D0D0'
 
 [colors.cursor]
 text = '#122637'

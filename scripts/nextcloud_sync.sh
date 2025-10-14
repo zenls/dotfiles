@@ -59,7 +59,7 @@ elif (($(($(date +%s) - ts)) <= DELAY_SEC)); then
     fi
 
     if (($(<"$EXIT_FILE") == 23)); then
-        echo "󰧠"
+        echo "󰧠\n\nwarning\""
     elif (($(<"$EXIT_FILE") == 55)); then
         echo "󰅠"
     fi

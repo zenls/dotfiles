@@ -12,8 +12,9 @@
             "cpu",
             "temperature",
             "custom/nextcloud_sync",
-            "custom/vpn_enable",
+            "custom/site_check",
             "custom/vpn_check",
+            "custom/ext_ip_check",
             "network"
         ],
         "modules-right": [
@@ -59,7 +60,6 @@
         "cpu": {
             "interval": 1,
             "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
-            // "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
             "format-icons": [
                 "<span color='#69ff94'>▁</span>",
                 "<span color='#2aa9ff'>▂</span>",
@@ -162,16 +162,17 @@
             "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
             "tooltip-format": "{icon} {desc} {volume}%, {format_source}"
         },
-        "custom/vpn_enable": {
+        "custom/vpn_check": {
             "interval": 3,
-            "exec": "ip l | grep wg | grep -q UP && echo  || echo ",
+            "exec": "ip l | grep wg | grep -q UP && echo  || echo \"\n\nwarning\"",
             "format": "{} "
         },
-        "custom/vpn_check": {
+        "custom/ext_ip_check": {
             "interval": 600,
-            "exec": "$HOME/.config/dotfiles/scripts/vpn_check.sh",
-            "on-click": "$HOME/.config/dotfiles/scripts/vpn_check.sh",
-            "format": " {}"
+            "exec": "$HOME/.config/dotfiles/scripts/ext_ip_check.sh",
+            "on-click": "$HOME/.config/dotfiles/scripts/ext_ip_check.sh",
+            "return-type": "json",
+            "format": "{}"
         },
         "custom/nextcloud_sync": {
             "interval": 3,
@@ -179,6 +180,13 @@
             "on-click": "$HOME/.config/dotfiles/scripts/nextcloud_sync.sh -f",
             "format": "{} ",
             "tooltip-format": "Nextcloud sync, last status: {}."
+        },
+        "custom/site_check": {
+            "interval": 600,
+            "exec": "$HOME/.config/dotfiles/scripts/site_check.sh",
+            "on-click": "$HOME/.config/dotfiles/scripts/site_check.sh",
+            "return-type": "json",
+            "format": "{} "
         }
     },
     // ===== All other monitors (MINIMAL BAR, auto-applied) =====
