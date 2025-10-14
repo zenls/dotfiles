@@ -55,5 +55,5 @@ ln -s ~/.config/dotfiles/waybar ~/.config/waybar
 ln -s ~/.config/dotfiles/alacritty ~/.config/alacritty
 ln -s ~/.config/dotfiles/wofi ~/.config/wofi
 ln -s ~/.config/dotfiles/mako ~/.config/mako
-ln -s ~/.config/dotfiles/flameshot ~/.config/flameshot
+ln -s ~/.config/dotfiles/satty ~/.config/satty
 ```
