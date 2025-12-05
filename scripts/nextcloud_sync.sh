@@ -49,6 +49,10 @@ elif [[ "$FORCE_SYNC" -eq 1 ]]; then
 # If time < DELAY_SEC
 elif (($(($(date +%s) - ts)) <= DELAY_SEC)); then
     if (($(<"$EXIT_FILE") == 0)); then
+        if ls "$LOCAL_FOLDER"/obsidian/.obsidian/workspace" (conflicted copy "*").json" >/dev/null 2>&1; then
+            rm -f "$LOCAL_FOLDER"/obsidian/.obsidian/workspace" (conflicted copy "*").json"
+        fi
+
         if find "$LOCAL_FOLDER" -type f -iname '*conflicted copy*' -printf . -quit | grep -q .; then
             notify-send -u critical -i nextcloud "Nextcloud" "Sync has conflicted file"
             echo "23" >"$EXIT_FILE"
@@ -59,7 +63,7 @@ elif (($(($(date +%s) - ts)) <= DELAY_SEC)); then
     fi
 
     if (($(<"$EXIT_FILE") == 23)); then
-        echo "󰧠\n\nwarning\""
+        echo -e "󰧠\n\nwarning"
     elif (($(<"$EXIT_FILE") == 55)); then
         echo "󰅠"
     fi
