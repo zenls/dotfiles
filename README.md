@@ -6,7 +6,8 @@ Hyprland:
 
 - `mod + enter` - terminal -> `alacritty`
 - `mod + space` - app menu -> `wofi`
-- `printscr` - screenshot -> `flameshot`
+- `printscr` - screenshot -> `slurp`
+- `shift + printscr` - screenshot -> `slurp` + `satty`
 - `mod + shift + p` - color picker -> `hyprpicker`
 - `mod + shift + v` - change vpn
 

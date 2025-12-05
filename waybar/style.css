@@ -6,6 +6,7 @@
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
     font-size: 14px;
+    /* font-size: 12px; */
 }
 
 window#waybar {
@@ -19,6 +20,7 @@ window#waybar {
     padding: 0rem 0.6rem;
     border-radius: 0.3rem;
     background-color: #1e1e2e;
+    color: #cdd6f4;
 }
 
 .warning {
@@ -73,6 +75,10 @@ window#waybar {
 
 /* ----- Middle blocks ----- */
 
+.modules-center {
+    margin-left: -10rem;
+}
+
 #memory {
     color: #cba6f7;
 }
@@ -98,7 +104,7 @@ window#waybar {
 }
 
 #network {
-    min-width: 22rem;
+    min-width: 21rem;
 }
 
 /* ----- Right blocks ----- */
@@ -122,6 +128,15 @@ window#waybar {
 #clock {
     color: #74c7ec;
 }
+
+#battery .warning {
+    background: rgb(150, 80, 0);
+}
+
+#battery .critical {
+    background: rgb(120, 0, 0);
+}
+
 
 /* ----- tooltip ----- */
 

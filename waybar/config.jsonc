@@ -2,7 +2,8 @@
     // ===== Main monitor (FULL BAR) =====
     {
         "name": "main",
-        "output": ["DP-6"], // Your primary monitor
+        "output": ["HDMI-A-4"],
+        // "output": ["eDP-1"],
         "layer": "top",
         "position": "top",
         "modules-left": ["custom/logo", "hyprland/workspaces"],
@@ -122,8 +123,8 @@
         },
         "battery": {
             "states": {
-                "warning": 30,
-                "critical": 15
+                "warning": 20,
+                "critical": 10
             },
             "format": "{icon} {capacity}%",
             "format-full": "{icon} {capacity}%",
@@ -158,8 +159,8 @@
                 "hifi": "󰤽",
                 "default": [""]
             },
-            "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-            "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+            "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+            "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
             "tooltip-format": "{icon} {desc} {volume}%, {format_source}"
         },
         "custom/vpn_check": {
@@ -192,7 +193,7 @@
     // ===== All other monitors (MINIMAL BAR, auto-applied) =====
     {
         "name": "second",
-        "output": ["!DP-6", "*"],
+        "output": ["!HDMI-A-4", "*"],
         "layer": "top",
         "position": "top",
         "modules-left": ["hyprland/workspaces"],
@@ -201,7 +202,8 @@
         "hyprland/workspaces": {
             "active-only": true,
             "persistent-workspaces": {
-                "*": [8, 9, 10]
+                "DP-6": [8, 9],
+                "DP-5": [10]
             },
             "sort-by": "id",
             "format": "{name}"

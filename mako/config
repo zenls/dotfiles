@@ -32,27 +32,10 @@ border-color=#5AA2FFFF
 border-color=#F38BA8FF
 default-timeout=0
 
-# ---------- SIZE PROFILES ----------
-# How to switch:
-#   makoctl mode -a 2k       # enable 2K profile
-#   makoctl mode -r 2k       # remove 2K profile
-#   makoctl mode -a fullhd   # enable FullHD profile
-
-# Profile for 2K (2560×1440)
-[mode=2k]
-output=DP-6
+[mode=default]
 font=Nerd Font 16
-width=400
+width=340
 padding=14
 margin=8
-border-radius=8
-border-size=2
-
-# Profile for FullHD (1920×1080)
-[mode=fullhd]
-font=Nerd Font 12
-width=210
-padding=5
-margin=5,20,5,20
 border-radius=8
 border-size=2
