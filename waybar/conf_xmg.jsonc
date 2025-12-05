@@ -1,0 +1,46 @@
+[
+    // ===== Main monitor (FULL BAR) =====
+    {
+        "output": ["HDMI-A-4"],
+
+        "cpu": {
+            "interval": 1,
+            "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
+            "format-icons": [
+                "<span color='#69ff94'>▁</span>",
+                "<span color='#2aa9ff'>▂</span>",
+                "<span color='#f8f8f2'>▃</span>",
+                "<span color='#f8f8f2'>▄</span>",
+                "<span color='#ffffa5'>▅</span>",
+                "<span color='#ffffa5'>▆</span>",
+                "<span color='#ff9977'>▇</span>",
+                "<span color='#dd532e'>█</span>"
+            ]
+        },
+
+        "include": "$HOME/.config/waybar/conf_common.jsonc"
+    },
+    // ===== All other monitors (MINIMAL BAR, auto-applied) =====
+    {
+        "name": "second",
+        "output": ["!HDMI-A-4", "*"],
+        "layer": "top",
+        "position": "top",
+        "modules-left": ["hyprland/workspaces"],
+        "modules-center": [],
+        "modules-right": ["clock"],
+        "hyprland/workspaces": {
+            "active-only": true,
+            "persistent-workspaces": {
+                "DP-6": [8, 9],
+                "DP-5": [10]
+            },
+            "sort-by": "id",
+            "format": "{name}"
+        },
+        "clock": {
+            "interval": 1,
+            "format": " {:%H:%M:%S %d.%m.%Y}"
+        }
+    }
+]

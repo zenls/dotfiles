@@ -1,5 +1,7 @@
 # MY DOTFILES
 
+To select the configuration for a specific device, uncomment the appropriate first line in `hyprland.conf`.
+
 ## Key cheatsheet
 
 Hyprland:
