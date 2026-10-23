@@ -27,7 +27,7 @@ setopt EXTENDED_HISTORY # save cmd times
 # Aliases
 alias ll='ls -alh --color=auto'
 # alias nano='nano -/'
-alias mpv_hdr='mpv --vo=gpu-next --target-colorspace-hint --gpu-api=vulkan --gpu-context=waylandvk'
+alias mpv_hdr='mpv --no-config --include="$HOME/.config/dotfiles/mpv/hdr.conf"'
 
 # Enable Agnoster theme
 setopt prompt_subst

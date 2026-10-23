@@ -2,6 +2,7 @@
     // ===== Main monitor (FULL BAR) =====
     {
         "output": ["HDMI-A-4"],
+        // "output": ["eDP-1"],
 
         "cpu": {
             "interval": 1,
@@ -24,6 +25,7 @@
     {
         "name": "second",
         "output": ["!HDMI-A-4", "*"],
+        // "output": ["!eDP-1", "*"],
         "layer": "top",
         "position": "top",
         "modules-left": ["hyprland/workspaces"],

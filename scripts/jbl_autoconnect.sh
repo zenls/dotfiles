@@ -4,7 +4,7 @@ set -euo pipefail
 DEV_NAME="JBL C5"
 DEV_MAC="2C:FD:B4:4F:72:E0"
 
-sleep 3
+sleep 5
 
 # Enable adapter and agent
 bluetoothctl <<EOF >/dev/null
