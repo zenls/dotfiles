@@ -1,0 +1,59 @@
+# Ghostty 1.4+. Based on the Alacritty palette and appearance.
+
+# Font
+font-family = Hack Nerd Font
+font-size = 12
+# Match Alacritty's unshaped text.
+font-feature = -calt,-liga,-dlig
+
+# Window
+window-padding-x = 6
+window-padding-y = 4
+window-decoration = server
+window-theme = system
+background-opacity = 0.7
+background-blur = true
+
+# Colors
+background = #000000
+foreground = #D0D0D0
+bold-color = bright
+
+# ANSI 0-7: black, red, green, yellow, blue, magenta, cyan, white.
+palette = 0=#000000
+palette = 1=#ff0000
+palette = 2=#37dd21
+palette = 3=#fee409
+palette = 4=#1460d2
+palette = 5=#ff005d
+palette = 6=#00bbbb
+palette = 7=#bbbbbb
+
+# ANSI 8-15: bright variants in the same order.
+palette = 8=#545454
+palette = 9=#f40d17
+palette = 10=#3bcf1d
+palette = 11=#ecc809
+palette = 12=#5555ff
+palette = 13=#ff55ff
+palette = 14=#6ae3f9
+palette = 15=#ffffff
+
+# Cursor
+cursor-style = underline
+cursor-style-blink = false
+cursor-color = #616161
+cursor-text = #122637
+# Prevent shell integration from replacing the underline with a bar.
+shell-integration-features = no-cursor
+
+# Scrollback and scrolling
+scrollback-limit-lines = 50000
+# Let the approximate line limit control retention instead of the byte limit.
+scrollback-limit-bytes = unlimited
+mouse-scroll-multiplier = 3
+
+# Notifications for commands finishing outside the focused terminal.
+# Minimum runtime uses Ghostty's default of 5 seconds.
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = notify

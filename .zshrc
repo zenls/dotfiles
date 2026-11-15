@@ -31,7 +31,7 @@ alias mpv_hdr='mpv --no-config --include="$HOME/.config/dotfiles/mpv/hdr.conf"'
 
 # Enable Agnoster theme
 setopt prompt_subst
-source ~/.zsh/themes/agnoster.zsh-theme
+source ~/.config/dotfiles/zsh/agnoster.zsh-theme
 
 # Add plagin zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=(completion)

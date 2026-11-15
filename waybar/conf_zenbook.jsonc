@@ -1,8 +1,13 @@
+// Zenbook: full-size internal-panel bar with its original 16-thread CPU graph.
 [
-    // ===== Main monitor (FULL BAR) =====
     {
         "output": ["eDP-1"],
-
+        "hyprland/workspaces": {
+            "persistent-workspaces": {
+                "*": [1, 2, 3, 4, 5, 6, 7]
+            }
+        },
+        "include": "$HOME/.config/waybar/conf_common.jsonc",
         "cpu": {
             "interval": 1,
             "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
@@ -16,8 +21,10 @@
                 "<span color='#ff9977'>▇</span>",
                 "<span color='#dd532e'>█</span>"
             ]
-        },
-
-        "include": "$HOME/.config/waybar/conf_common.jsonc"
+        }
+    },
+    {
+        "output": ["!eDP-1", "*"],
+        "include": "$HOME/.config/waybar/conf_minimal.jsonc"
     }
 ]

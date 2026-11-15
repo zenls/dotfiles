@@ -62,5 +62,5 @@ respond differently to the desktop SDR controls.
 
 If you select another monitor HDR preset, re-check its advertised capabilities
 and update both `target-peak` here and the monitor luminance overrides in
-`hypr/hypr_xmg.conf`. Accurate white balance, color, and PQ tracking require
+`hypr/hypr_xmg.lua`. Accurate white balance, color, and PQ tracking require
 measurements with an instrument suited to the OLED panel.

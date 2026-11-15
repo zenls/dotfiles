@@ -6,7 +6,6 @@
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
     font-size: 14px;
-    /* font-size: 12px; */
 }
 
 window#waybar {
@@ -41,7 +40,6 @@ window#waybar {
 #workspaces.module {
     padding-left: 0rem;
     padding-right: 0rem;
-    margin-left: 2rem;
 }
 
 #workspaces button {
@@ -75,10 +73,6 @@ window#waybar {
 
 /* ----- Middle blocks ----- */
 
-.modules-center {
-    margin-left: -10rem;
-}
-
 #memory {
     color: #cba6f7;
 }
@@ -88,13 +82,10 @@ window#waybar {
 }
 
 #custom-nextcloud_sync {
-    margin-left: 3rem;
+    margin-left: 1rem;
 }
 
-#custom-site_check {
-    padding-right: 0.4rem;
-}
-
+#custom-site_check,
 #custom-vpn_check {
     padding-right: 0.4rem;
 }
@@ -103,11 +94,53 @@ window#waybar {
     padding-right: 0.5rem;
 }
 
-#network {
-    min-width: 21rem;
+#custom-ext_ip_check.error,
+#custom-vpn_check.error {
+    color: #f38ba8;
+}
+
+#custom-ext_ip_check.normal {
+    color: #94e2d5;
+}
+
+#custom-ext_ip_check.direct {
+    color: #89dceb;
+}
+
+#custom-ext_ip_check.warning {
+    background-color: #1e1e2e;
+    color: #f38ba8;
+}
+
+#custom-ext_ip_check.unknown {
+    color: #fab387;
+}
+
+#custom-ext_ip_check.disconnected {
+    color: #a6adc8;
 }
 
 /* ----- Right blocks ----- */
+
+#custom-tablet_battery,
+#custom-dualsense_battery {
+    color: #89b4fa;
+}
+
+#custom-tablet_battery.charging,
+#custom-dualsense_battery.charging {
+    color: #ff7043;
+}
+
+#custom-tablet_battery.full,
+#custom-dualsense_battery.full {
+    color: #a6e3a1;
+}
+
+#custom-tablet_battery.discharging,
+#custom-dualsense_battery.discharging {
+    color: #89b4fa;
+}
 
 #pulseaudio {
     color: #b4befe;
@@ -129,14 +162,13 @@ window#waybar {
     color: #74c7ec;
 }
 
-#battery .warning {
+#battery.warning {
     background: rgb(150, 80, 0);
 }
 
-#battery .critical {
+#battery.critical {
     background: rgb(120, 0, 0);
 }
-
 
 /* ----- tooltip ----- */
 

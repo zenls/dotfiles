@@ -1,0 +1,11 @@
+// Secondary panel: workspaces and the shared clock/calendar.
+{
+    "name": "second",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [],
+    "modules-right": ["clock"],
+    "include": "$HOME/.config/waybar/conf_common.jsonc",
+    "clock": {
+        "format": " {:%H:%M:%S %d.%m.%Y}"
+    }
+}
