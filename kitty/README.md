@@ -26,9 +26,12 @@ Font metrics and high-precision scrolling can differ between terminals.
 
 ## Installation
 
-For a new setup, use the directory symlink in the root README. If
-`~/.config/kitty` already exists, back up `kitty.conf` and link just that file.
-Hyprland launches Kitty with `SUPER + Enter` on both hosts.
+For a new setup, use the directory symlink in the root README with
+`ln -sfn`; without `-n`, re-running the command follows an existing
+symlink-to-directory and nests a self-referential link. If `~/.config/kitty`
+is a real directory, back up `kitty.conf` and link just that file, or remove
+the directory first (`-n` does not apply to real directories). Hyprland
+launches Kitty with `SUPER + Enter` on both hosts.
 
 Ranger uses its native Kitty renderer with the two settings in
 [`../ranger/rc.conf`](../ranger/rc.conf). No local preview plugin is needed.

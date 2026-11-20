@@ -18,6 +18,7 @@
         "network"
     ],
     "modules-right": [
+        "custom/opencode",
         "custom/tablet_battery",
         "custom/dualsense_battery",
         "pulseaudio",

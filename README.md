@@ -114,17 +114,23 @@ sudo pacman -S libnotify adwaita-icon-theme papirus-icon-theme ttf-hack-nerd ttf
 cd .config
 git clone ...
 
-ln -s ~/.config/dotfiles/.zshrc ~/.zshrc
-ln -s ~/.config/dotfiles/hypr ~/.config/hypr
-ln -s ~/.config/dotfiles/waybar ~/.config/waybar
-ln -s ~/.config/dotfiles/alacritty ~/.config/alacritty
-ln -s ~/.config/dotfiles/kitty ~/.config/kitty
-ln -s ~/.config/dotfiles/ghostty ~/.config/ghostty
-ln -s ~/.config/dotfiles/ranger ~/.config/ranger
-ln -s ~/.config/dotfiles/wofi ~/.config/wofi
-ln -s ~/.config/dotfiles/mako ~/.config/mako
-ln -s ~/.config/dotfiles/satty ~/.config/satty
+ln -sfn ~/.config/dotfiles/.zshrc ~/.zshrc
+ln -sfn ~/.config/dotfiles/hypr ~/.config/hypr
+ln -sfn ~/.config/dotfiles/waybar ~/.config/waybar
+ln -sfn ~/.config/dotfiles/alacritty ~/.config/alacritty
+ln -sfn ~/.config/dotfiles/kitty ~/.config/kitty
+ln -sfn ~/.config/dotfiles/ghostty ~/.config/ghostty
+ln -sfn ~/.config/dotfiles/ranger ~/.config/ranger
+ln -sfn ~/.config/dotfiles/wofi ~/.config/wofi
+ln -sfn ~/.config/dotfiles/mako ~/.config/mako
+ln -sfn ~/.config/dotfiles/satty ~/.config/satty
 ```
+
+`-n` (`--no-dereference`) is what makes re-running this block safe: without it,
+`ln` follows an existing `~/.config/<app>` symlink to a directory and creates a
+self-referential link inside the repository (for example `wofi/wofi`). If the
+destination is a real directory, move it away first or link just the config
+file; `-n` does not change how `ln` treats real directories.
 
 The Zsh configuration loads the tracked theme from `zsh/agnoster.zsh-theme`.
 Its Git segment counts staged files (`2`) and unstaged/untracked files (`3`)

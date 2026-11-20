@@ -122,6 +122,11 @@ window#waybar {
 
 /* ----- Right blocks ----- */
 
+#custom-opencode {
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+}
+
 #custom-tablet_battery,
 #custom-dualsense_battery {
     color: #89b4fa;

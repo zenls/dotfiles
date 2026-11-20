@@ -7,7 +7,7 @@ corresponding Hyprland profile.
 | -------------------- | ---------------------------------------------------------------------- |
 | `modules.jsonc`      | Module formats, polling intervals, commands, calendar and tray options |
 | `conf_common.jsonc`  | Full panel geometry and module order                                   |
-| `conf_minimal.jsonc` | Secondary panel: workspaces and clock with date                        |
+| `conf_minimal.jsonc` | Secondary panel: workspaces, OpenCode status, and clock with date     |
 | `conf_xmg.jsonc`     | XMG output names and 32-thread CPU graph                               |
 | `conf_zenbook.jsonc` | Zenbook full-size internal panel, 16-thread CPU graph and brightness    |
 | `style.css`          | Shared colors and spacing                                              |
@@ -32,7 +32,7 @@ Workspace hover tooltips are disabled. Scrolling over the panel cycles through
 the current monitor's workspaces using Waybar's built-in handler
 (`enable-bar-scroll`), while modules with their own scroll actions retain them.
 
-`custom/tablet_battery` is the first module in the full panel's right group.
+`custom/tablet_battery` follows the OpenCode widget in the full panel's right group.
 It shows a Nerd Font icon and the connected Wacom's battery percentage.
 `custom/dualsense_battery` follows it with the `󰊴` icon and the connected
 PlayStation controller's percentage. Both use `scripts/hid_battery.sh`, with
@@ -41,11 +41,56 @@ power-supply and HID attributes every 5 seconds; no model name or Bluetooth
 address is hardcoded. The tooltip includes the reported model, charge,
 charging state, connection type and serial/Bluetooth address when available.
 Each module is hidden completely when its device is disconnected or its battery
-data is unavailable. Secondary minimal panels keep only their clock.
+data is unavailable. The battery widgets are not included on secondary panels.
 The script uses Bash and the same `jq` dependency as the other status scripts;
 it does not require Python or UPower.
 The widget text is orange-red while charging, green when full, and blue while
 discharging. A 100% battery is treated as full unless it is still charging.
+
+## OpenCode 2
+
+One widget (`custom/opencode`) starts the right group on every full and minimal
+panel, using the same settings. It displays one colored dot per monitored
+session, without numbers or a fixed slot limit.
+The same session opened in multiple clients appears only once. Agent child
+sessions contribute to their parent session's status. With no sessions, the
+widget is hidden.
+
+Colors: yellow means a pending permission or question, red means active work,
+green means idle, and gray means the status cannot be verified. Waiting takes
+priority over working. The compact monospace tooltip matches the IP widget:
+`OC` and the session count, then a colored dot, root folder name, short status
+(`WAIT`, `RUN`, `IDLE`, `ERR`) and session title. `!2` means two pending approvals;
+`?1` means one pending question. Paths, PIDs and session IDs are omitted.
+API-provided text is escaped for Pango markup; long titles are shortened.
+
+Waybar runs `scripts/opencode_waybar.sh` directly as a continuous JSON producer
+and restarts it after five seconds if it exits. There is no separate collector
+service, shared cache, heartbeat or refresh signal. `scripts/opencode_waybar.jq`
+groups sessions and propagates child-session status to their parent.
+
+The script discovers live VS Code OpenCode clients every two seconds and reads
+the shared OpenCode 2 service registration from
+`${XDG_STATE_HOME:-~/.local/state}/opencode/service.json`. Repeated clients with
+the same project/session scope are queried once. Historical sessions without a
+live client are omitted. It never launches OpenCode or submits model prompts.
+
+Each displayed widget subscribes to filtered `/api/event` SSE events. Relevant
+changes are coalesced to at most one snapshot per second, with a 30-second
+fallback. Token deltas are excluded. Requests have timeouts, failed streams
+reconnect, and credentials are only sent to the registered loopback server.
+The private temporary credential file and stream are removed when the script
+exits. Dependencies are Bash, `jq`, `curl`, `pgrep` and coreutils.
+
+Without `--session`, the script uses the project's most recently viewed root
+session and active work in that project. The API does not expose the selected
+TUI tab per client. `--standalone` and custom servers are shown as unavailable.
+The endpoints were verified against the installed OpenCode 2.2.7 and the
+[v2 API reference](https://opencode.ai/docs/api). Inspect a single snapshot with:
+
+```sh
+bash ~/.config/dotfiles/scripts/opencode_waybar.sh --once | jq
+```
 
 ## Public IP and VPN status
 

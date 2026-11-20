@@ -86,6 +86,16 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
     },
 
+    // OpenCode 2: one colored dot per monitored session.
+    "custom/opencode": {
+        "exec": "exec bash $HOME/.config/dotfiles/scripts/opencode_waybar.sh",
+        "restart-interval": 5,
+        "return-type": "json",
+        "format": "{text}",
+        "hide-empty-text": true,
+        "tooltip": true
+    },
+
     // Drawing tablet: hidden when no connected Wacom battery is available.
     "custom/tablet_battery": {
         "exec": "$HOME/.config/dotfiles/scripts/hid_battery.sh 'wacom_battery_*'",

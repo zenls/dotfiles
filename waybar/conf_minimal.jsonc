@@ -1,9 +1,9 @@
-// Secondary panel: workspaces and the shared clock/calendar.
+// Secondary panel: workspaces, OpenCode status, and the shared clock/calendar.
 {
     "name": "second",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["clock"],
+    "modules-right": ["custom/opencode", "clock"],
     "include": "$HOME/.config/waybar/conf_common.jsonc",
     "clock": {
         "format": " {:%H:%M:%S %d.%m.%Y}"
