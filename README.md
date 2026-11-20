@@ -50,9 +50,11 @@ minimal layouts; see [its configuration guide](waybar/README.md).
 
 `hypridle.conf` and `hyprpaper.conf` use their applications' own configuration
 formats and remain separate from the Hyprland Lua configuration.
-Hyprpaper matches the two Philips displays by description and serial, so
-connector renumbering does not swap or remove their wallpapers. The main display,
-internal panel, and other outputs use the fallback wallpaper.
+Outputs without a specific wallpaper use Hyprland's built-in `wall2.png`
+(the subway illustration) instead of choosing a random background.
+Zenbook does not run Hyprpaper. On XMG, Hyprpaper assigns custom wallpapers to
+the two Philips displays by description and serial, so connector renumbering
+does not swap or remove them.
 
 To check the configuration without starting a session:
 

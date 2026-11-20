@@ -64,7 +64,11 @@ hl.config({
     animations = { enabled = true },
     dwindle = { preserve_split = true, force_split = 2 },
     master = { new_status = "master" },
-    misc = { disable_hyprland_logo = true, disable_splash_rendering = true },
+    misc = {
+        disable_hyprland_logo = false,
+        disable_splash_rendering = true,
+        force_default_wallpaper = 2,
+    },
     input = {
         kb_layout = "us,ru",
         kb_variant = "",
